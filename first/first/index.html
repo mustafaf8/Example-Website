@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="css/mainCss.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="section" id="overview">
+        <h2>Hi there, I'm Mustafa </h2>
+        <p >Software is a set of instructions that enables computers and devices to perform specific tasks. It encompasses everything from operating systems and applications to games and utilities. The development process involves designing, coding, testing, and maintaining these programs to ensure they meet user needs and function effectively.</p>
+        <img src="assets/left-arrow-key.png" alt="scroll down" title="arrow">
+    </div>
+    <div class="section1">
+        <h2>The Impact of Software on Business Efficiency and Growth</h2>
+        <p >Software provides numerous benefits for businesses. Firstly, it enhances efficiency by automating processes and reducing human errors. Software tools for data analysis and reporting speed up decision-making and enable better strategic planning. Customer relationship management software improves customer satisfaction and streamlines business operations. Communication and collaboration tools enhance team coordination and cooperation. Cloud-based solutions offer flexibility by making work accessible from anywhere. Additionally, software increases transparency in business processes and aids in performance monitoring. Overall, software optimizes business operations, supports growth, and provides a competitive edge.</p>
+</div>
+<div class="section2">
+    <h2>The Future of Software: Innovation, Connectivity, and Intelligence</h2>
+    <p >The future of software promises to be transformative, driving innovation across all sectors. As artificial intelligence and machine learning advance, software will increasingly enable more sophisticated automation and decision-making processes. The rise of quantum computing holds the potential to solve complex problems previously deemed unsolvable. Software will continue to enhance connectivity through the Internet of Things (IoT), making smart homes and cities a reality. Additionally, cybersecurity will become more crucial as software evolves, requiring advanced protection measures. The development of more intuitive and user-friendly interfaces will democratize technology, making it accessible to a broader audience. Overall, software will play a central role in shaping a more connected, efficient, and intelligent future.</p>
+</div>
+<div class="section3">
+    
+    <p>&copy; 2024 <strong>VENSE</strong>. All rights reserved.</p>
+
+</div>
+<script>
+    // JavaScript ile navbar'ı yükle
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    });
+</script>
+<script src="js/main.js"></script>
+<script src="js/navbar.js"></script>
+</body>
+</html>

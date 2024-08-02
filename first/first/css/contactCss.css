@@ -1,0 +1,171 @@
+
+body {
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+    /*background-attachment: scroll; /* Resim sayfa kaydırıldıkça kayar */
+    background-image: url('../assets/mountain.jpg'); /* Resim dosyasının yolu */ 
+    background-repeat: no-repeat; /* Resmi tekrar etme */
+    background-size: cover; /* Resmi kapla, gerekirse kırp */
+    background-attachment: fixed; /* Resim sayfa kaydırıldıkça kayar */
+    font-family: Arial, sans-serif;
+    height: 915px; /* Sayfanın boyunu artırır, böylece kaydırma çubuğu oluşur */
+    z-index: -2; /*boyutları temsil ediyor yani -2 ikinci katman -1 birinci katman*/
+}
+.contact {
+    overflow-y: hidden;
+    max-width: 700px;
+    height: 60%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    position: relative;
+    top: 12%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form {
+    display: grid;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0rem;
+    color: rgba(0, 0, 0, 1);
+}
+
+input, textarea {
+    background-color: rgb(240, 240, 240,0.3);
+    color: #000;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    opacity: 1;
+    font-size: medium;
+}
+
+
+textarea {
+    resize: vertical;
+    color: rgba(0, 0, 0, 1);
+    height: 50%;
+   
+}
+
+button {
+    background-color: #a5c0c2;
+    color: black;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    top: -100%;
+}
+
+button:hover {
+    background-color: #889199;
+}
+
+.info {
+    
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    top: -15%;
+    opacity: 0.5;
+}
+
+.info p {
+    
+    margin: 0.5rem 0;
+    background-color:rgb(240, 240, 240,0);
+    opacity: 1 ;
+}
+
+.info strong {
+    color: #000000;
+    
+}
+.footer {
+    opacity: 0.8;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2%;
+    background-color: black;
+    display: flex; /* Flexbox kullanımı */
+    bottom: 0;
+    position: fixed; /* Sayfanın altına sabitler */
+    justify-content: flex-end; /* Yatayda sağa hizalama */
+    align-items: center;
+    padding: 5px; /* İsteğe bağlı olarak içeriğin daha belirgin olmasını sağlar */
+}
+
+.footer p {
+    width: 100%;
+    color: #fff;
+    text-align: center; /* Metni ortalamak için */
+}
+/* Responsive Tasarım */
+@media (max-width: 1500px) {
+    body {
+        background-size: cover; /* Küçük ekranlarda resmi kapsayacak şekilde büyüt */
+    }
+    .contact {
+        position: relative;
+        top: 20%;
+        overflow-y: scroll; /* Dikey kaydırma aktif */
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color:white;
+    }   
+}
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Küçük ekranlarda resmi kapsayacak şekilde büyüt */
+    }
+
+    .contact {
+        position: relative;
+        top: 20%;
+        overflow-y: auto; /* Dikey kaydırma aktif */
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: white; /* Koyu arka planda beyaz metin */
+    }
+}
+@media (max-width: 500px) {
+    .contact {
+        position: relative;
+        
+        padding: 1rem;
+        overflow-y: auto; /* Dikey kaydırma aktif */
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: white; /* Koyu arka planda beyaz metin */
+    }
+}
+
+
+
+

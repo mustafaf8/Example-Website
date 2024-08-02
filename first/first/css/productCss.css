@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin-top: 5%;
+    overflow-x: hidden;
+    background-color: antiquewhite;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+}
+.row img {
+    margin: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasyon için geçiş */
+    width: calc(33.33% - 10px); /* 3 resim için genişlik */
+}
+.row img:hover {
+    transform: scale(1.1); /* Resmi büyüt */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Hafif gölge ekle */
+}
+.footer {
+    opacity: 0.8;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2%;
+    background-color: black;
+    display: flex; /* Flexbox kullanımı */
+    justify-content: center; /* Yatayda ortalama */
+    align-items: center; /* Dikeyde ortalama */
+}
+
+.footer p {
+    width: 100%;
+    color: #fff;
+    text-align: center; /* Metni ortalamak için */
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Küçük ekranlarda dikey hizalama */
+    }
+
+    .navbar-right {
+        display: none; /* Sağ kısımdaki ikonları gizle */
+    }
+
+    .logo img {
+        display: none; /* Logo resmini gizle */
+    }
+
+    .sub-navbar {
+        padding: 10px 40px; /* Küçük ekranlarda daha az padding */
+    }
+
+    .sub-navbar nav ul {
+        flex-direction: row; /* Menü öğelerini dikey hizalar */
+        align-items: center; /* Ortalar */
+    }
+
+    .sub-navbar nav ul li {
+        margin: 15px 0; /* Menü öğeleri arasında dikey boşluk */
+    }
+    .footer {
+        justify-content: end; /* Yatayda ortalama */
+        bottom: 0;
+        position: fixed; /* Sayfanın altına sabitler */
+        justify-content: flex-end; /* Yatayda sağa hizalama */
+        align-items: center;
+        padding: 10px; /* İsteğe bağlı olarak içeriğin daha belirgin olmasını sağlar */
+    }
+    .footer p {
+        color: #fff;
+        text-align: center;
+        margin: 0; /* Üst ve alt boşlukları kaldırır */
+    }
+}

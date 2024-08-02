@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/productCss.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="column">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <img src="assets/2943195.jpg" alt="picture">
+            <img src="assets/3085981.jpg" alt="picture">
+            <img src="assets/5874813.jpg" alt="picture">
+            
+        </div>
+
+        <div class="row">
+            <img src="assets/3553472.jpg" alt="picture">
+            <img src="assets/5165074.jpg" alt="picture">
+            <img src="assets/5842056.jpg" alt="picture">
+        </div>
+        <div class="row">
+            <img src="assets/3130377.jpg" alt="picture">
+            <img src="assets/5874830.jpg" alt="picture">
+        </div>
+       
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 <strong>VENSE</strong>. All rights reserved.</p>
+    </div>
+    <script>
+        // JavaScript ile navbar'ı yükle
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*--------------*/
+}
+body {
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+    /*overflow-y: auto; /* Dikey kaydırma aktif */
+    /*background-attachment: scroll; /* Resim sayfa kaydırıldıkça kayar */
+    background-image: url('../assets/mountains.jpg'); /* Resim dosyasının yolu */ 
+    background-repeat: no-repeat; /* Resmi tekrar etme */
+    background-size: cover; /* Resmi kapla, gerekirse kırp */
+    background-attachment: scroll; /* Resim sayfa kaydırıldıkça kayar */
+    font-family: Arial, sans-serif;
+    height: 1300px; /* Sayfanın boyunu artırır, böylece kaydırma çubuğu oluşur */
+    z-index: 1; /*boyutları temsil ediyor yani -2 ikinci katman -1 birinci katman*/
+}
+
+
+.hero {
+    text-align: center;
+    padding: 150px 0px; /*ile px dikey ikinci yanlara*/
+    margin: 0px 0px; /*margin ise boutunu ayarlıyor */
+    height: 50vh;
+}
+.hero h1{
+    text-align: center;
+    padding: 20px 20px;   
+}
+
+.mission{
+    text-align: center;
+    padding: 60px 0px; /*ile px dikey ikinci yanlara*/
+    position: relative;
+    top: 0%;
+}
+.mission h2 {
+    text-align: center;
+    padding: 3%;
+}
+.mission p {
+    padding: 0px 200px; /*ile px dikey ikinci yanlara*/
+}
+.container1{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: -10%;
+    
+
+}
+.team {
+    background-color: rgb(136, 103, 103); 
+    height: 50vh;
+    padding: 60px 20px; 
+    text-align: center; 
+    opacity: 0.7; 
+    transition: opacity 1.5s ease-in-out, top 1.5s ease-in-out; 
+    margin: auto;
+    position: relative; 
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%);
+    width: 50%; 
+    z-index: 1;
+
+}
+.team h2 {
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+    margin: 0%;
+    opacity: 1;
+}
+.team p{
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+    opacity: 1;
+}
+
+.container2{
+ 
+    height: 50vh;
+    margin: auto;
+    position: relative;
+    top: 0%;
+    display: inline-block;
+    left: 5%;
+    width: 50%;
+    z-index: -999;
+    
+}
+.member {
+    
+    height: 50vh;
+    padding: 60px 20px; 
+    text-align: center; 
+    opacity: 1; 
+    transition: opacity 1.5s ease-in-out, top 1.5s ease-in-out; 
+    margin: auto;
+    position: relative; 
+    top: 3%;
+    left: 18%;
+    transform: translate(-50%);
+    width: 50%; 
+    z-index: 999;
+}
+.member img{
+    opacity: 1;
+    display: block;
+    width: 78%;
+    padding: 5%;
+    position: absolute;
+    left: 15%;
+    top: -3%;
+    box-shadow: 0 0 0 1px rgb(124, 109, 109);
+    
+}
+.member p {
+    color: #fff;
+    opacity: 0.8;
+    position: relative;
+    top: 130%;
+    left: 5%;
+    font-size: large;
+    font-weight: bold;
+}
+.container2::before, .container2::after {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: 20%;
+    width: 50%;
+    height: 120%;
+    box-sizing: border-box;
+    border-radius: 5px; /* Opsiyonel: köşeleri yuvarlatmak için */
+}
+
+
+.footer {
+    opacity: 0.8;
+    width: 100%;
+    height: 5vh;
+    margin-top: 2%;
+    background-color: black;
+    display: flex; /* Flexbox kullanımı */
+    
+   bottom: 0;
+   position: fixed; /* Sayfanın altına sabitler */
+   justify-content: flex-end; /* Yatayda sağa hizalama */
+   align-items: center;
+   padding: 10px; /* İsteğe bağlı olarak içeriğin daha belirgin olmasını sağlar */
+}
+
+.footer p {
+    width: 100%;
+    color: #fff;
+    text-align: center; /* Metni ortalamak için */
+}
+/* Başlangıçta gizli olan bölümler */
+.hero, .mission, .team, .member {
+    opacity: 0; /* Bölüm görünmez */
+    transform: translateY(20px); /* Sayfanın altından başlayarak kaydırma animasyonu */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Geçiş efekti */
+}
+
+/* Görünür hale geldiğinde */
+.hero.visible, .mission.visible, .team.visible, .member.visible {
+    opacity: 1; /* Bölüm görünür */
+    transform: translateY(0); /* Bölüm orijinal konumuna döner */
+}
+
+
+
+/* Medya Sorguları */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 100px 0px; /* Daha küçük ekranlarda padding */
+    }
+
+    .mission p {
+        padding: 0px 50px; /* Daha küçük ekranlarda padding */
+    }
+
+    .team, .member {
+        height: auto; /* Yüksekliği otomatik yap */
+        padding: 30px 10px; /* Daha küçük ekranlarda padding */
+        margin: 10px 0; /* Daha küçük ekranlarda margin */
+        width: 100%; /* Ekran boyutuna göre genişlik */
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0px; /* Daha küçük ekranlarda padding */
+    }
+
+    .mission p {
+        padding: 0px 20px; /* Daha küçük ekranlarda padding */
+    }
+
+    .team, .member {
+        padding: 20px 5px; /* Daha küçük ekranlarda padding */
+    }
+   
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 50px 0px; /* Daha küçük ekranlarda padding */
+    }
+
+    .mission p {
+        padding: 0px 10px; /* Daha küçük ekranlarda padding */
+    }
+    
+}
+
+
+
+
+

@@ -1,0 +1,216 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+    /*overflow-y: auto; /* Dikey kaydırma aktif */
+    /*background-attachment: scroll; /* Resim sayfa kaydırıldıkça kayar */
+    background-image: url('../assets/mountains.jpg'); /* Resim dosyasının yolu */ 
+    background-repeat: no-repeat; /* Resmi tekrar etme */
+    background-size: cover; /* Resmi kapla, gerekirse kırp */
+    background-attachment: scroll; /* Resim sayfa kaydırıldıkça kayar */
+    font-family: Arial, sans-serif;
+    height: 2000px; /* Sayfanın boyunu artırır, böylece kaydırma çubuğu oluşur */
+    z-index: -2; /*boyutları temsil ediyor yani -2 ikinci katman -1 birinci katman*/
+}
+
+/* Genel Bölüm Stili */
+.section {
+    height: 100vh;
+    padding: 60px 20px; /* İç boşluk */
+    text-align: center; /* Metni ortalar */
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 2.5s ease-in-out; /* Geçiş efekti */
+    margin: auto;
+    position: relative; /* İçeriği manuel yerleştirmek için */
+    top: 15%; /*yukarı yonlu attıkça aşağı gider*/
+    left: 40%;/*yanlara dogru */
+    transform: translate(-50%);
+    width: 80%; /* Genişliği belirle, isteğe bağlı */
+    z-index: -1;
+}
+
+/* Görünür Durum */
+.section.visible {
+    opacity: 0.9; /* Görünür */
+}
+
+.section h2 {
+    font-size: 1.3rem;
+    color: #4b4444;
+    margin: -1rem 1rem 1rem;
+    border-bottom: 2px solid #4b4444;
+    text-wrap: balance;
+}
+
+.section p {
+    text-wrap: balance;
+    border: black;
+}
+.section img {
+    margin: 3%;
+    padding: 5px 12px;
+    vertical-align: middle; /* Dikey hizalama */
+    width: 30px; /* İkon genişliği */
+    height: 25px; /* İkon yüksekliği */
+    position: relative;
+    top: -20px; /* Yukarı taşıma */
+}
+
+.section1 {
+    background-color: #fff;
+    height: 50vh;
+    padding: 60px 20px; 
+    text-align: center; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out, top 1.5s ease-in-out; 
+    margin: auto;
+    position: relative; 
+    top: 0%;
+    left: 45%;
+    transform: translate(-50%);
+    width: 40%; 
+    z-index: -1;
+}
+
+.section1.visible {
+    opacity: 0.6; 
+}
+
+.section1 h2 {
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 1);
+    margin: -1rem 1rem 1rem;
+    text-wrap: balance;
+}
+
+.section1 p {
+    text-wrap: balance;
+    border: black;
+    color: rgba(0, 0, 0, 1);
+}
+
+.section2 {
+    background-color: white;
+    height: 50vh;
+    padding: 60px 20px; 
+    text-align: center; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out, top 1.5s ease-in-out; 
+    margin: auto;
+    position: relative; 
+    top: 10%;
+    left: -5%;
+    transform: translate(-50%);
+    width: 40%; 
+    z-index: -1;
+}
+
+.section2.visible {
+    opacity: 0.4; 
+}
+
+.section2 h2 {
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 1);
+    margin: -1rem 1rem 1rem;
+    text-wrap: balance;
+}
+
+.section2 p {
+    text-wrap: balance;
+    color: rgba(0, 0, 0, 1);
+}
+
+.section3 {
+    background-color: #494040;
+    height: 5vh; /* Yüksekliği, daha kısa bir alan için değiştirebilirsiniz */
+    padding: 10px; /* İç boşluk */
+    text-align: center; 
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out, bottom 1.5s ease-in-out; /* 'bottom' ekleyin */
+    position: fixed; /* Sabit pozisyon */
+    bottom: 0; /* Sayfanın en altında */
+    left: 0; /* Sayfanın sol kenarına hizalanmış */
+    width: 100%; /* Tam genişlik */
+    z-index: 999; /* Diğer öğelerin üstünde */
+}
+
+.section3.visible {
+    opacity: 0.5; 
+}
+
+.section3 p {
+    margin: 0; /* Margin'i sıfırla */
+    color: rgb(255, 255, 255,1); /* Yazı rengi */
+    opacity: 1;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .section {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        left: 45%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+    .section img {
+        margin: 5%;
+        padding: 10px 10px;
+    }
+
+    .section1 {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        height: 75vh;
+        left: 45%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+
+    .section2 {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        height: 75vh;
+        left: 45%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+    .section3 {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        left: 5%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+}
+
+@media (max-width: 1350px) {
+    .section {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        left: 45%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+    .section img {
+        margin: 5%;
+        padding: 10px 10px;
+    }
+
+    .section1 {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        height: 75vh;
+        left: 45%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+
+    .section2 {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        height: 75vh;
+        left: 45%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+    .section3 {
+        text-align: center;
+        width: 90%; /* Bölümlerin genişliğini ayarla */
+        left: 5%; /* Ortalamak için sol mesafeyi ayarla */
+    }
+}
+

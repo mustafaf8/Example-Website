@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(255, 244, 235);
+    color: #fff;
+    padding: 6px 0;
+    position: fixed;
+    width: 100%;
+    top: 0; /* Ekranın üst kısmına sabitlenir */
+    left: 0;
+    z-index: 1000; /* Diğer öğelerin altında kalmasını engeller */
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px; /* Kenarlarda biraz boşluk bırak */
+}
+
+/* Navbar Sol Kısım */
+.navbar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Arama İkonu */
+.search-icon img {
+    width: 15px; /* İkon genişliği */
+    height: 15px; /* İkon yüksekliği */
+    margin-right: 15px;
+}
+
+/* Arama Kutusu */
+input[type="text"] {
+    border: 0; /* Kenarlık */
+    border-radius: 1px; /* Köşe yuvarlama */
+    padding: 8px; /* İç boşluk */
+    font-size: 16px; /* Yazı tipi boyutu */
+    width: 200px; /* Genişlik */
+    height: 30px; /* Yükseklik */
+    background-color: rgb(255, 244, 235); /* Arka plan rengi */
+    transition: background-color 0.3s; /* Geçiş efekti */
+    box-sizing: border-box; /* Kenarlık ve iç boşluğu genişlik ve yüksekliğe dahil eder */
+}
+
+/* Arama Kutusu Üzerine Gelindiğinde */
+input[type="text"]:hover {
+    outline: none; /* Kenarlık efekti yok */
+    background-color: white; /* Arka plan rengi */
+}
+
+/* Navbar Sağ Kısım */
+.navbar-right {
+    display: flex; /* Flexbox düzeni kullanarak hizalama */
+    align-items: center; /* Dikey hizalama */
+}
+
+/* İkon Linkleri */
+.navbar-right a {
+    display: inline-block; /* Resimlerin hizalanmasını sağlar */
+}
+
+/* İkonlar */
+.navbar-right img {
+    vertical-align: middle; /* Dikey hizalama */
+    width: 20px; /* İkon genişliği */
+    height: 20px; /* İkon yüksekliği */
+    margin: 0 10px; /* İkonlar arasına boşluk ekler */
+}
+
+/* Şeffaf Alt Header */
+.sub-navbar {
+    background-color: rgba(0, 0, 0, 0.1); /* Şeffaf arka plan */
+    color: #333;
+    padding: 25px 100px;
+    position: fixed;
+    width: 100%;
+    height: 72px;
+    justify-content: space-between;
+    top: 40px; /* Navbar'ın hemen altında kalacak şekilde ayarlar */
+    left: 0;
+    z-index: 999; /* Navbar'ın altında kalmaması için bir alt z-index değeri */
+}
+
+/* Sub-navbar'daki Menü */
+.sub-navbar nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Menü Öğeleri */
+.sub-navbar nav ul li {
+    margin: 0 15px;
+}
+
+/* Menü Linkleri */
+.sub-navbar nav ul li a {
+    text-decoration: none;
+    color: white; /* Normal durumda yazı rengi */
+    font-size: 16px;
+}
+
+/* Menü Linkleri Üzerine Gelindiğinde */
+.sub-navbar nav ul li a:hover {
+    color: #000; /* Mouse ile üzerine gelindiğinde yazı rengi siyah olur */
+    transition: color 0.6s; /* Geçiş efekti ekleyebilirsiniz */
+}
+
+/* Logo */
+.logo img {
+    border-radius: 30px;
+    vertical-align: middle; /* Dikey hizalama */
+    width: 50px; /* İkon genişliği */
+    height: 50px; /* İkon yüksekliği */
+    position: relative;
+    top: -15px; /* Yukarı taşıma */
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Küçük ekranlarda dikey hizalama */
+    }
+
+    .navbar-right {
+        display: none; /* Sağ kısımdaki ikonları gizle */
+    }
+
+    .logo img {
+        display: none; /* Logo resmini gizle */
+    }
+
+    .sub-navbar {
+        padding: 10px 40px; /* Küçük ekranlarda daha az padding */
+    }
+
+    .sub-navbar nav ul {
+        flex-direction: row; /* Menü öğelerini dikey hizalar */
+        align-items: center; /* Ortalar */
+    }
+
+    .sub-navbar nav ul li {
+        margin: 15px 0; /* Menü öğeleri arasında dikey boşluk */
+    }
+}

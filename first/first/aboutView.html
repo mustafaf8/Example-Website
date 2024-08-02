@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/aboutCss.css"> 
+</head>
+<body>
+    
+    <div id="navbar-placeholder"></div>
+    <main class="about">
+        <section class="hero">
+            <h1>About Us</h1>
+            <p>Welcome to <strong>VENSE !</strong> We are dedicated to providing you with the best products and services.</p>
+        </section>
+
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>Our future goals focus on creating innovative and effective solutions in the field of software development. With the experience gained from working on both web and mobile application projects, I aim to develop user-friendly and high-performance applications. My passion for technology drives me to continuously explore new tools and methodologies. My goal is to address real-world problems through my projects and enhance societal benefits through technology. In the long term, I aim to further improve software development processes and provide impactful and sustainable solutions.</p>
+        </section>
+        
+   <div class="container1">
+        <section class="team">
+            <h2>Mustafa NAHSAN</h2>
+            <p>I am Mustafa Nahsan, a student at Selçuk University, Faculty of Technology, with experience in software development. I actively work on developing both web and mobile applications, using my skills to create innovative solutions. My work encompasses various aspects of software engineering, including designing intuitive user interfaces and integrating advanced functionalities. My passion for technology and software development drives me to explore new tools and methodologies. My dedication to programming aims to contribute to impactful projects and solve real-world problems through technology.</p>      
+        </section>
+        <div class="container2">
+           <section class="member">        
+                    <img src="assets/photo_01.jpg" alt="Team Member 1">   
+                    <p>CEO & Founder</p>   
+            </section>
+            
+        </div>
+        </div>
+    </main>
+    <div class="footer">
+        <p>&copy; 2024 <strong>VENSE</strong>. All rights reserved.</p>
+    </div>
+
+    <script>
+        // JavaScript ile navbar'ı yükle
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    <script src="js/about.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>
