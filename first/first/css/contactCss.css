@@ -126,7 +126,7 @@ button:hover {
     .contact {
         position: relative;
         top: 20%;
-        overflow-y: scroll; /* Dikey kaydırma aktif */
+        overflow-y: scroll; 
     }
     h2 {
         text-align: center;
